@@ -1,10 +1,9 @@
-import { useState } from 'react';
-import TaskForm from './pages/TaskForm.js';
-import ToDo from './pages/Todo-list.js';
-import useTaskManager from './TodlistFunctions.js'
+import TaskForm from './TaskForm.js';
+import ToDo from './Todo-list.js';
+import useTaskManager from '../logic/useTaskManager.js';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
+import '../App.css';
 
 function Todolist() {
   const {
