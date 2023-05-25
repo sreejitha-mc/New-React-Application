@@ -6,11 +6,34 @@ import {
 } from '@fortawesome/free-solid-svg-icons'
 
 const ToDo = ({ toDo, markDone, setUpdateData, deleteTask }) => {
+
   return(
     <>
       {toDo && toDo
       .sort((a, b) => a.id > b.id ? 1 : -1)
       .map( (task, index) => {
+        const handleEditClick = (task) => {
+          if (!task.status) {
+            setUpdateData({
+              id: task.id,
+              title: task.title,
+              status: task.status ? true : false
+            });
+          }
+        };
+      
+        const handleDeleteTask = (taskId) => {
+          if(taskId) {
+            deleteTask(task.id);
+          }  
+        };
+      
+      
+        const handleMarkDone = (taskId) => {
+          if(taskId) {
+            markDone(task.id);
+          }  
+        };
         return(
           <React.Fragment key={task.id}>
             <div className="col taskBg">
@@ -20,25 +43,21 @@ const ToDo = ({ toDo, markDone, setUpdateData, deleteTask }) => {
               </div>
               <div className="iconsWrap">
                 <span title="Completed / Not Completed"
-                  onClick={ (e) => markDone(task.id) }
+                  onClick={ (e) => handleMarkDone(task.id) }
                 >
                   <FontAwesomeIcon icon={faCircleCheck} />
                 </span>
 
                 {task.status ? null : (
                   <span title="Edit"
-                    onClick={ () => setUpdateData({ 
-                      id: task.id, 
-                      title: task.title, 
-                      status: task.status ? true : false
-                    }) }
+                    onClick={() => handleEditClick(task)}
                   >
                     <FontAwesomeIcon icon={faPen} />
                   </span>
                 )}
 
                 <span title="Delete"
-                  onClick={() => deleteTask(task.id)}
+                  onClick={() => handleDeleteTask(task.id)}
                 >
                   <FontAwesomeIcon icon={faTrashCan} />
                 </span>
