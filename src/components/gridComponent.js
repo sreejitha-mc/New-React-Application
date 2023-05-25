@@ -1,9 +1,10 @@
 import React from 'react';
-import FetchData from '../logic/fetchData.js';
-import '../App.css'; 
+import FetchData from '../logic/useFetchData.js';
+import '../App.css';
+import useFetchData from '../logic/useFetchData.js';
 
 function CharacterGrid() {
-  const { characters } = FetchData();
+    const { characters, currentPage, handleNextPage, handlePreviousPage } = useFetchData(1);
 
   const getGridRows = (characters) => {
     const gridRows = [];
@@ -19,6 +20,11 @@ function CharacterGrid() {
 
   return (
     <div className="character-grid">
+      <button onClick={handlePreviousPage} disabled={currentPage === 1}>
+        Previous
+      </button>
+      <button onClick={handleNextPage}>Next</button>
+
       {getGridRows(characters).map((row, rowIndex) => (
         <div key={rowIndex} className="grid-row">
           {row.map((character) => (
@@ -35,6 +41,7 @@ function CharacterGrid() {
       ))}
     </div>
   );
+
 }
 
 export default CharacterGrid;
