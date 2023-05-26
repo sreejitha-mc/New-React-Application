@@ -1,5 +1,4 @@
 import React from 'react';
-import FetchData from '../logic/useFetchData.js';
 import '../App.css';
 import useFetchData from '../logic/useFetchData.js';
 

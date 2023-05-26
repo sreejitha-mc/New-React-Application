@@ -5,7 +5,8 @@ import {
   Routes
 } from 'react-router-dom';
 import Todolist from './pages/TodoList';
-import FetchFilmData from './pages/FetchFilmData';
+import Calculator from './pages/Calculator';
+import FetchFilmData from './pages/fetchFilmData';
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
         <Route exact path="/" element={<Counter />} />
         <Route path="/todo" element={<Todolist />} />
         <Route path="/FetchData" element={<FetchFilmData />} />
+        <Route path="/Calculator" element={<Calculator />} />
+
       </Routes>
 
     </Router>
