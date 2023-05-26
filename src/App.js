@@ -4,9 +4,9 @@ import {
   BrowserRouter as Router, Route,
   Routes
 } from 'react-router-dom';
-import Todolist from './pages/TodoList';
-import Calculator from './pages/Calculator';
-import FetchFilmData from './pages/fetchFilmData';
+import Todolist from './pages/ToDo/TodoList';
+import Calculator from './pages/Calculator/Calculator';
+import FetchFilmData from './pages/FetchData/fetchFilmData';
 
 function App() {
   return (

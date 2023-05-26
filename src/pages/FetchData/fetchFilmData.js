@@ -1,4 +1,4 @@
-import CharacterGrid from '../components/gridComponent.js';
+import CharacterGrid from '../../components/gridComponent.js';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
