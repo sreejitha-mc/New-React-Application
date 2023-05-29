@@ -7,6 +7,7 @@ import {
 import Todolist from './pages/ToDo/TodoList';
 import Calculator from './pages/Calculator/Calculator';
 import FetchFilmData from './pages/FetchData/fetchFilmData';
+import Timer from './pages/Timer/Timer';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/todo" element={<Todolist />} />
         <Route path="/FetchData" element={<FetchFilmData />} />
         <Route path="/Calculator" element={<Calculator />} />
+        <Route path="/Timer" element={<Timer />} />
 
       </Routes>
 
