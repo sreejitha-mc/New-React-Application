@@ -9,6 +9,7 @@ import Calculator from './pages/Calculator/Calculator';
 import FetchFilmData from './pages/FetchData/fetchFilmData';
 import Timer from './pages/Timer/Timer';
 import DisplayArrayData from './pages/DisplayArrayData/DisplayArrayData'
+import Cart from './pages/Cart/Cart';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
         <Route path="/Calculator" element={<Calculator />} />
         <Route path="/Timer" element={<Timer />} />
         <Route path="/Display" element={<DisplayArrayData />} />
+        <Route path="/Cart" element={<Cart />} />
+
 
       </Routes>
 

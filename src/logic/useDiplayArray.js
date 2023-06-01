@@ -1,9 +1,13 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 
-const useDisplayArray = (initialData) => {
-  const [data, setData] = useState(initialData);
+const useDisplayArray = () => {
+  const [data, setData] = useState([
+    { id: 1, text: '' },
+    { id: 2, text: '' },
+    { id: 3, text: '' },
+  ]);
 
-  const handleChange = (id, newText) => {
+  const handleChange = useCallback((id, newText) => {
     setData((data) =>
     data.map((item) => {
         if (item.id === id) {
@@ -12,7 +16,7 @@ const useDisplayArray = (initialData) => {
         return item;
       })
     );
-  };
+  },[]);
 
   return [data, handleChange];
 };
