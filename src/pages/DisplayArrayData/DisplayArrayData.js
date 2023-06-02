@@ -16,12 +16,7 @@ const InputComponent = memo(({ id, text, onChange }) => {
 });
 
 const DisplayArrayComponent = () => {
-  // const initialData = [
-  //   { id: 1, text: '' },
-  //   { id: 2, text: '' },
-  //   { id: 3, text: '' },
-  // ];
-
+  
   const [data, handleChange] = useDisplayArray();
 
   return (

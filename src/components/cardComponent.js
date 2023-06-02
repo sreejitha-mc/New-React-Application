@@ -1,19 +1,22 @@
 import React from 'react';
 import '../pages/Cart/Cart.css';
 
-const ProductCard = ({ product, addToCart }) => {
+const ProductCard = ({ product, addToCart,  }) => {
   const { imageUrl, name, price } = product;
 
   const handleAddToCart = () => {
     addToCart(product);
   };
 
+
   return (
-    <div className="card">
+    <div className="card product-item">
       <img src={imageUrl} alt={name} />
-      <h3>{name}</h3>
-      <p>{price}</p>
-      <button onClick={handleAddToCart}>Add to Cart</button>
+      <div className="product-details">
+        <h3>{name}</h3>
+        <p>${price}</p>
+      </div>
+      <button className="button" onClick={handleAddToCart}>Add to Cart</button>
     </div>
   );
 };
