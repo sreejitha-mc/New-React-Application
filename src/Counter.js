@@ -12,8 +12,8 @@ function Counter() {
       </div>
    );
 }
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<Counter />);
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(<Counter />);
 
 
 export default Counter;
